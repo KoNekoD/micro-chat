@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/api/chat/{chat_ulid}/message/get')]
+#[Route('/api/chat/{chat_ulid}/messages/get')]
 class GetMessagesAction
 {
     public function __construct(

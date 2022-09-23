@@ -11,11 +11,10 @@ use App\Chats\Domain\Repository\ChatRepositoryInterface;
 use App\Shared\Domain\Security\UserFetcherInterface;
 use App\Users\Domain\Entity\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/api/chat/join', name: 'api_chat_join', methods: ['POST'])]
+#[Route('/api/chat/{chat_ulid}/join', name: 'api_chat_join', methods: ['POST'])]
 class JoinChatAction
 {
     public function __construct(
@@ -26,12 +25,10 @@ class JoinChatAction
     ) {
     }
 
-    public function __invoke(Request $request): JsonResponse
+    public function __invoke(string $chat_ulid): JsonResponse
     {
         /** @var User $user */
         $user = $this->userFetcher->getAuthUser();
-
-        $chat_ulid = $request->request->get('chat_ulid');
 
         try {
             $chat = $this->chatRepository->findByUlid($chat_ulid);

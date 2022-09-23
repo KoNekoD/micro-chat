@@ -35,9 +35,10 @@ class AddUserToChatAction
         /** @var User $user */
         $user = $this->userFetcher->getAuthUser();
 
-        $invite_user_ulid = $request->request->get('user_ulid');
+        $data = $request->toArray();
+        $invite_user_ulid = $data['user_ulid'];
         if (null === $invite_user_ulid) {
-            return new JsonResponse(['reason' => 'No set invite user_ulid or chat_ulid field'], Response::HTTP_BAD_REQUEST);
+            return new JsonResponse(['reason' => 'No set invite user_ulid'], Response::HTTP_BAD_REQUEST);
         }
 
         try {
