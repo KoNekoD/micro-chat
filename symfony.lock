@@ -1,4 +1,67 @@
 {
+    "doctrine/annotations": {
+        "version": "1.13",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.10",
+            "ref": "64d8583af5ea57b7afa4aba4b159907f3a148b05"
+        }
+    },
+    "doctrine/doctrine-bundle": {
+        "version": "2.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.4",
+            "ref": "da713d006953b90d1c085c1be480ecdd6c4a95e0"
+        },
+        "files": [
+            "config/packages/doctrine.yaml",
+            "src/Entity/.gitignore",
+            "src/Repository/.gitignore"
+        ]
+    },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "3.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "1f5514cfa15b947298df4d771e694e578d4c204d"
+        },
+        "files": [
+            "src/DataFixtures/AppFixtures.php"
+        ]
+    },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.1",
+            "ref": "1d01ec03c6ecbd67c3375c5478c9a423ae5d6a33"
+        },
+        "files": [
+            "config/packages/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+        ]
+    },
+    "friendsofphp/php-cs-fixer": {
+        "version": "3.11",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "be2103eb4a20942e28a6dd87736669b757132435"
+        },
+        "files": [
+            ".php-cs-fixer.dist.php"
+        ]
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.9.0"
+    },
     "lexik/jwt-authentication-bundle": {
         "version": "2.16",
         "recipe": {
@@ -10,6 +73,29 @@
         "files": [
             "config/packages/lexik_jwt_authentication.yaml"
         ]
+    },
+    "phpunit/phpunit": {
+        "version": "9.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "9.3",
+            "ref": "a6249a6c4392e9169b87abf93225f7f9f59025e6"
+        },
+        "files": [
+            ".env.test",
+            "phpunit.xml.dist",
+            "tests/bootstrap.php"
+        ]
+    },
+    "qossmic/deptrac-shim": {
+        "version": "0.24",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "0.19",
+            "ref": "3c3daab46226c37fc14e10faf81df737a3039d96"
+        }
     },
     "symfony/console": {
         "version": "6.1",
@@ -77,6 +163,19 @@
         },
         "files": [
             "config/packages/security.yaml"
+        ]
+    },
+    "symfony/translation": {
+        "version": "6.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "da64f5a2b6d96f5dc24914517c0350a5f91dee43"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
         ]
     }
 }

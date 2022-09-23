@@ -1,6 +1,6 @@
-#controllers:
-#    resource: ../src/Controller/
-#    type: attribute
-
 api_login_check:
   path: /api/auth/token/login
+
+chats:
+    resource: ../src/Chats/Infrastructure/Controller/
+    type: attribute

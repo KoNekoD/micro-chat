@@ -1,0 +1,19 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Chats\Domain\Entity\ChatParticipant" table="chats_chat_participant">
+        <id name="user" type="string" association-key="true">
+            <generator strategy="NONE"/>
+        </id>
+        <id name="chat" type="string" association-key="true">
+            <generator strategy="NONE"/>
+        </id>
+        <many-to-one field="chat" target-entity="App\Chats\Domain\Entity\Chat">
+            <join-column referenced-column-name="ulid" on-delete="CASCADE"/>
+        </many-to-one>
+        <many-to-one field="user" target-entity="App\Users\Domain\Entity\User">
+            <join-column referenced-column-name="ulid"/>
+        </many-to-one>
+    </entity>
+</doctrine-mapping>
